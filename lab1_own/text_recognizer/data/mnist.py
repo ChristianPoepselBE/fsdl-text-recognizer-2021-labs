@@ -1,6 +1,6 @@
 """ MNIST DataModule """
 import argparse
-from unittest.mock import Base
+
 from torch.utils.data import random_split
 from torchvision.datasets import MNIST as TorchMNIST
 from torchvision import transforms
