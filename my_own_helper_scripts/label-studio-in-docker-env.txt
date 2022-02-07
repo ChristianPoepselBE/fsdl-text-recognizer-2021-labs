@@ -1,0 +1,22 @@
+As Provided in Lecture: => does not work
+docker run --rm -p 8080:8080 -v ${PWD}/my_project:/label-studio/my_project --name label-studio heartexlabs/label-studio:latest label-studio start my_project --init
+
+
+
+Flag -it is needed for Pypi login:
+
+###################################################################################################################################################################
+Working:
+
+docker run -it -p 8080:8080 -v ${PWD}/my_project:/label-studio/my_project --name label-studio  heartexlabs/label-studio:latest label-studio start my_project --init
+###################################################################################################################################################################
+Interface:
+
+
+<View>
+  <Image name="image" value="$image"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="Line" background="green"/>
+  </RectangleLabels>
+  <TextArea name="transcription" toName="image" rows="2" editable="true" perRegion="true" required="true" />
+</View>

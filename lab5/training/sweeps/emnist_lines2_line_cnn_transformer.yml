@@ -5,7 +5,7 @@ command:
   - "--wandb"
   - ${args}
 program: training/run_experiment.py
-method: random
+method: random # could also be grid or bayes
 metric:
   goal: minimize
   name: val_loss

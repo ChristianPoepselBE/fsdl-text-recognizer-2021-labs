@@ -1,0 +1,12 @@
+Server: GET image from URL:
+curl "http://localhost:8000/v1/predict?image_url=https://fsdl-public-assets.s3-us-west-2.amazonaws.com/paragraphs/a01-077.png"
+
+
+POST image as base64 encoded string: (not working...)
+
+(echo -n '{ "image": "data:image/png;base64,'$(base64 -w0 -i text_recognizer/tests/support/paragraphs/a01-077.png)'" }') | curl -X POST "http://localhost:8000/v1/predict" -H 'Content-Type: application/json' -d @-
+
+
+Serverless:
+curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{ "image_url": "https://fsdl-public-assets.s3-us-west-2.amazonaws.com/paragraphs/a01-077.png"}'
+
